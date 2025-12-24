@@ -1,48 +1,414 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-<meta charset="UTF-8">
-<title>C.D.G Spare Parts & Services LTD</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-html,body{
-  margin:0;
-  padding:0;
-  height:100%;
-  font-family: Arial, Helvetica, sans-serif;
-}
-body{
-  background:url('assets/cdg-bg.png') center/cover no-repeat fixed;
-  color:#ffffff;
-}
-.overlay{
-  min-height:100vh;
-  background:rgba(255,255,255,0.05);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.hero-box{
-  padding:40px 48px;
-  border-radius:26px;
-  background:rgba(255,255,255,0.18);
-  backdrop-filter: blur(14px);
-  box-shadow:0 30px 80px rgba(0,0,0,0.25);
-}
-.hero-box h1{
-  margin:0;
-  font-size:clamp(36px,5vw,70px);
-  font-weight:700;
-  text-shadow:0 10px 40px rgba(0,0,0,0.35);
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C.D.G Spare Parts & Services LTD</title>
+  <meta name="description" content="C.D.G Spare Parts & Services LTD — Η λύση στα ανταλλακτικά. Ανταλλακτικά & τεχνική υποστήριξη με πανκύπρια εξυπηρέτηση." />
+
+  <style>
+    :root{
+      --glass: rgba(255,255,255,0.16);
+      --glass2: rgba(255,255,255,0.10);
+      --border: rgba(255,255,255,0.26);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.88);
+      --shadow: 0 30px 90px rgba(0,0,0,0.26);
+      --radius: 22px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: url("assets/cdg-bg.png") center/cover no-repeat fixed;
+    }
+
+    /* Brand wash (NOT black) */
+    .pageWash{
+      min-height:100%;
+      background: linear-gradient(180deg,
+        rgba(255,255,255,0.06),
+        rgba(70,150,255,0.06),
+        rgba(255,255,255,0.05)
+      );
+    }
+
+    /* Top nav */
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 10px 16px;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.10);
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+    }
+    .navLeft{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 200px;
+    }
+    .brandMark{
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.10);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+      flex: 0 0 auto;
+    }
+    .brandMark img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+    }
+    .brandText{
+      line-height: 1.05;
+    }
+    .brandText strong{ display:block; font-size: 14px; letter-spacing: 0.03em; }
+    .brandText span{ display:block; font-size: 12px; opacity: 0.9; }
+
+    .navLinks{
+      display:flex;
+      flex-wrap: wrap;
+      justify-content:center;
+      gap: 10px 14px;
+    }
+    .navLinks a{
+      color:#fff;
+      text-decoration:none;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .navLinks a:hover{ background: rgba(255,255,255,0.14); }
+
+    .navCta{
+      display:flex;
+      gap:10px;
+      min-width: 200px;
+      justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      text-decoration:none;
+      color:#fff;
+      font-weight: 700;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+    }
+    .btn:hover{ background: rgba(255,255,255,0.20); }
+    .btnPrimary{
+      background: rgba(255,255,255,0.20);
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+
+    /* Layout container */
+    .container{
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 18px 16px 70px;
+    }
+
+    /* Hero */
+    .hero{
+      min-height: calc(100vh - 72px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding: 26px 0 40px;
+    }
+    .heroCard{
+      width: min(920px, 94vw);
+      border-radius: 28px;
+      padding: 26px 22px 20px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      position: relative;
+      overflow:hidden;
+    }
+    /* Subtle emblem watermark inside hero card */
+    .heroCard::before{
+      content:"";
+      position:absolute;
+      inset:-30%;
+      background: url("assets/cdg-logo.png") center/contain no-repeat;
+      opacity: 0.10;
+      transform: rotate(-8deg) scale(1.05);
+      pointer-events:none;
+    }
+    .heroInner{ position: relative; z-index: 2; }
+
+    .slogan{
+      margin: 0;
+      font-size: clamp(34px, 5vw, 70px);
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      text-shadow: 0 12px 45px rgba(0,0,0,0.30);
+      line-height: 1.03;
+    }
+    .heroSub{
+      margin: 14px auto 0;
+      max-width: 780px;
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.55;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 18px;
+      padding: 12px 14px;
+    }
+    .heroActions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content:center;
+      margin-top: 14px;
+    }
+
+    /* Sections */
+    .grid2{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+    }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+      .navLeft,.navCta{ min-width: unset; }
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: var(--glass2);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+      padding: 18px 16px;
+      position: relative;
+      overflow:hidden;
+    }
+    .cardTitle{
+      margin: 0 0 10px 0;
+      font-size: 22px;
+      letter-spacing: 0.01em;
+    }
+    .card p{ margin: 0; color: var(--muted); line-height: 1.65; }
+
+    .pillRow{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px;
+    }
+    .pill{
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .brands{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .brandCard{
+      border-radius: 18px;
+      padding: 14px 12px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      text-align:center;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 900px){ .brands{ grid-template-columns: repeat(2, 1fr); } }
+
+    /* Footer */
+    footer{
+      text-align:center;
+      padding: 22px 16px;
+      color: rgba(255,255,255,0.86);
+      border-top: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(12px);
+    }
+
+    /* Smooth scroll */
+    html{ scroll-behavior: smooth; }
+    .anchor{ scroll-margin-top: 88px; }
+  </style>
 </head>
+
 <body>
-<div class="overlay">
-  <div class="hero-box">
-    <h1>Η λύση στα ανταλλακτικά.</h1>
-  </div>
+<div class="pageWash">
+
+  <header class="nav">
+    <div class="navLeft">
+      <div class="brandMark" aria-label="CDG emblem">
+        <img src="assets/cdg-logo.png" alt="CDG Emblem" />
+      </div>
+      <div class="brandText">
+        <strong>C.D.G</strong>
+        <span>Spare Parts & Services LTD</span>
+      </div>
+    </div>
+
+    <nav class="navLinks" aria-label="Μενού">
+      <a href="#about">Ποιοι είμαστε</a>
+      <a href="#services">Υπηρεσίες</a>
+      <a href="#products">Προϊόντα</a>
+      <a href="#brands">Brands</a>
+      <a href="#contact">Επικοινωνία</a>
+    </nav>
+
+    <div class="navCta">
+      <a class="btn" href="tel:+35799666438">📞 Κλήση</a>
+      <a class="btn btnPrimary" href="https://wa.me/35799666438" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero" aria-label="Hero">
+      <div class="heroCard">
+        <div class="heroInner">
+          <h1 class="slogan">Η λύση στα ανταλλακτικά.</h1>
+          <div class="heroSub">
+            Ανταλλακτικά & τεχνική υποστήριξη για <b>αυτοκίνητα</b>, <b>φορτηγά</b> και <b>λεωφορεία</b> —
+            με έδρα τη Λευκωσία και <b>πανκύπρια εξυπηρέτηση</b>.
+          </div>
+          <div class="heroActions">
+            <a class="btn btnPrimary" href="#contact">📍 Βρες μας</a>
+            <a class="btn" href="#products">🧩 Δες προϊόντα</a>
+            <a class="btn" href="mailto:cdgsparts@gmail.com">✉️ Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="anchor">
+      <div class="grid2">
+        <div class="card">
+          <h2 class="cardTitle">Ποιοι είμαστε</h2>
+          <p>
+            Η <b>C.D.G Spare Parts & Services LTD</b> προσφέρει ποιοτικά ανταλλακτικά και τεχνική υποστήριξη,
+            με επίκεντρο την αξιοπιστία, την άμεση εξυπηρέτηση και τον σωστό τεχνικό έλεγχο συμβατότητας.
+          </p>
+          <div class="pillRow">
+            <div class="pill">Αυτοκίνητα</div>
+            <div class="pill">Φορτηγά</div>
+            <div class="pill">Λεωφορεία</div>
+            <div class="pill">Πανκύπρια</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="cardTitle">Στοιχεία</h2>
+          <p><b>Τηλ / WhatsApp:</b> 99666438</p>
+          <p style="margin-top:8px;"><b>Email:</b> cdgsparts@gmail.com</p>
+          <p style="margin-top:8px;"><b>Διεύθυνση:</b><br>
+            3, Arch. Makarios III Str, 2572 Pera Chorio Nisou, Nicosia, Cyprus
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="anchor">
+      <div class="card">
+        <h2 class="cardTitle">Υπηρεσίες</h2>
+        <p>
+          Τεχνική καθοδήγηση, έλεγχος συμβατότητας (με στοιχεία οχήματος/VIN), άμεση διαθεσιμότητα όπου είναι εφικτό,
+          και υπεύθυνη πρόταση λύσης ανά περίπτωση — ώστε να πάρεις το σωστό ανταλλακτικό χωρίς ρίσκο.
+        </p>
+      </div>
+    </section>
+
+    <section id="products" class="anchor">
+      <div class="card">
+        <h2 class="cardTitle">Προϊόντα</h2>
+        <p>
+          Διαθέσιμες κατηγορίες (ενδεικτικά): φρένα, φίλτρα, ανάρτηση, ρουλεμάν, ηλεκτρικά/αισθητήρες,
+          ιμάντες, υγρά & αναλώσιμα, καθώς και λύσεις για βαρέα οχήματα.
+        </p>
+        <div class="pillRow">
+          <div class="pill">Φρένα</div>
+          <div class="pill">Φίλτρα</div>
+          <div class="pill">Ανάρτηση</div>
+          <div class="pill">Ηλεκτρικά</div>
+          <div class="pill">Βαρέα Οχήματα</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="brands" class="anchor">
+      <div class="card">
+        <h2 class="cardTitle">Brands</h2>
+        <p>
+          Συνεργαζόμαστε με κορυφαίους οίκους ανταλλακτικών. Ενδεικτικά:
+        </p>
+        <div class="brands" aria-label="Brand list">
+          <div class="brandCard">ZF</div>
+          <div class="brandCard">OEM Quality</div>
+          <div class="brandCard">Heavy Duty</div>
+          <div class="brandCard">Auto Parts</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="anchor">
+      <div class="grid2">
+        <div class="card">
+          <h2 class="cardTitle">Επικοινωνία</h2>
+          <p><b>Κλήση:</b> <a href="tel:+35799666438" style="color:#fff;">+357 99666438</a></p>
+          <p style="margin-top:8px;"><b>Email:</b> <a href="mailto:cdgsparts@gmail.com" style="color:#fff;">cdgsparts@gmail.com</a></p>
+          <p style="margin-top:8px;"><b>Διεύθυνση:</b><br>
+            3, Arch. Makarios III Str, 2572 Pera Chorio Nisou, Nicosia, Cyprus
+          </p>
+          <div class="heroActions" style="justify-content:flex-start;margin-top:12px;">
+            <a class="btn btnPrimary" href="https://maps.google.com/?q=3%2C%20Arch.%20Makarios%20III%20Str%2C%202572%20Pera%20Chorio%20Nisou%2C%20Nicosia%2C%20Cyprus" target="_blank" rel="noopener">🗺️ Άνοιγμα στο Maps</a>
+            <a class="btn" href="https://wa.me/35799666438" target="_blank" rel="noopener">💬 WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="card" aria-label="CDG emblem panel">
+          <h2 class="cardTitle">Το έμβλημα μας</h2>
+          <p>Η εταιρική ταυτότητα εμφανίζεται στο background και στο μενού για άμεση αναγνωρισιμότητα.</p>
+          <div style="margin-top:12px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06)">
+            <img src="assets/cdg-logo.png" alt="CDG Emblem" style="width:100%;height:220px;object-fit:cover;display:block;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © C.D.G Spare Parts & Services LTD — Σωστή επιλογή. Άμεση υποστήριξη.
+  </footer>
+
 </div>
 </body>
 </html>
