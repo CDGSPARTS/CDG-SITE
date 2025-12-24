@@ -1,181 +1,48 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <title>C.D.G Spare Parts & Services LTD</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="C.D.G Spare Parts & Services LTD – Η λύση στα ανταλλακτικά. Πανκύπρια εξυπηρέτηση.">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b2a4a;
-      color: #ffffff;
-    }
-
-    /* HERO */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      background: url('assets/cdg-hero.png') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(11,42,74,0.15), rgba(11,42,74,0.25));
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 24px 30px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.35);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
-    }
-
-    .hero-content h1 {
-      font-size: clamp(34px, 5vw, 68px);
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-shadow: 0 10px 40px rgba(0,0,0,0.35);
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 50;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 14px 0;
-      background: rgba(11,42,74,0.6);
-      backdrop-filter: blur(10px);
-    }
-
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 15px;
-      letter-spacing: 0.05em;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 90px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 18px;
-    }
-
-    section p {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #d6e6ff;
-    }
-
-    /* WATERMARK */
-    .watermark {
-      position: relative;
-      background: url('assets/cdg-hero.png') center/600px no-repeat;
-    }
-
-    .watermark::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(11,42,74,0.9);
-    }
-
-    .watermark > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
-      color: #bcd7ff;
-      border-top: 1px solid rgba(255,255,255,0.2);
-    }
-  </style>
+<meta charset="UTF-8">
+<title>C.D.G Spare Parts & Services LTD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html,body{
+  margin:0;
+  padding:0;
+  height:100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  background:url('assets/cdg-bg.png') center/cover no-repeat fixed;
+  color:#ffffff;
+}
+.overlay{
+  min-height:100vh;
+  background:rgba(255,255,255,0.05);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-box{
+  padding:40px 48px;
+  border-radius:26px;
+  background:rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px);
+  box-shadow:0 30px 80px rgba(0,0,0,0.25);
+}
+.hero-box h1{
+  margin:0;
+  font-size:clamp(36px,5vw,70px);
+  font-weight:700;
+  text-shadow:0 10px 40px rgba(0,0,0,0.35);
+}
+</style>
 </head>
-
 <body>
-
-<nav>
-  <a href="#about">Ποιοι είμαστε</a>
-  <a href="#services">Υπηρεσίες</a>
-  <a href="#brands">Brands</a>
-  <a href="#contact">Επικοινωνία</a>
-</nav>
-
-<section class="hero">
-  <div class="hero-content">
+<div class="overlay">
+  <div class="hero-box">
     <h1>Η λύση στα ανταλλακτικά.</h1>
   </div>
-</section>
-
-<section id="about" class="watermark">
-  <h2>Ποιοι είμαστε</h2>
-  <p>
-    Η <strong>C.D.G Spare Parts & Services LTD</strong> δραστηριοποιείται στον χώρο των
-    ανταλλακτικών με έδρα τη Λευκωσία και πανκύπρια εξυπηρέτηση.
-    Εξειδικευόμαστε σε αυτοκίνητα, φορτηγά και λεωφορεία,
-    προσφέροντας ποιότητα, τεχνική γνώση και αξιοπιστία.
-  </p>
-</section>
-
-<section id="services">
-  <h2>Τι προσφέρουμε</h2>
-  <p>
-    Ποιοτικά ανταλλακτικά, τεχνική υποστήριξη, έλεγχο συμβατότητας
-    και άμεση εξυπηρέτηση σε όλες τις πόλεις της Κύπρου.
-  </p>
-</section>
-
-<section id="brands" class="watermark">
-  <h2>Brands</h2>
-  <p>
-    Συνεργαζόμαστε με κορυφαίους οίκους ανταλλακτικών,
-    συμπεριλαμβανομένου του <strong>ZF</strong> και άλλων διεθνών κατασκευαστών.
-  </p>
-</section>
-
-<section id="contact">
-  <h2>Επικοινωνία</h2>
-  <p>
-    📞 99666438<br>
-    ✉️ cdgsparts@gmail.com<br>
-    📍 3, Arch. Makarios III Str, 2572 Pera Chorio Nisou, Nicosia, Cyprus
-  </p>
-</section>
-
-<footer>
-  © C.D.G Spare Parts & Services LTD — Σωστή επιλογή. Άμεση υποστήριξη.
-</footer>
-
+</div>
 </body>
 </html>
