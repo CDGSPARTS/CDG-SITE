@@ -55,6 +55,79 @@ radial-gradient(520px 320px at 20% 70%, rgba(128,215,255,.14), transparent 60%),
 color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:120px;resize:vertical}
 .footer{margin-top:18px;padding:18px 0 28px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 @media(max-width:1020px){.heroGrid{grid-template-columns:1fr}.bullets{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.brandGrid{grid-template-columns:repeat(2,1fr)}.reviews{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.menu{display:none}}
+
+/* === FANTASTIC HERO UPGRADE (logo background, no black overlay) === */
+.hero{
+  position:relative;
+  overflow:hidden;
+  min-height:78vh;
+  border-radius:28px;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background: url('assets/cdg-hero.png') center/cover no-repeat;
+  transform: scale(1.02);
+}
+/* light, brand-colored wash (NOT black) */
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(135deg,
+    rgba(255,255,255,0.10),
+    rgba(100,170,255,0.12),
+    rgba(255,255,255,0.08)
+  );
+  backdrop-filter: blur(0px);
+}
+.hero .content, .hero .heroContent, .hero .hero-content, .hero .wrap, .hero .inner{
+  position:relative;
+  z-index:2;
+}
+/* glass panel for text readability */
+.heroGlass{
+  display:inline-block;
+  padding:18px 22px;
+  border-radius:22px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+  backdrop-filter: blur(10px);
+}
+.hero h1{
+  margin:0;
+  font-size: clamp(30px, 4.6vw, 64px);
+  letter-spacing: 0.01em;
+  line-height:1.05;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+.hero p.sub, .hero .sub{
+  margin:10px 0 0 0;
+  font-size: clamp(16px, 2vw, 20px);
+  opacity: 0.92;
+}
+/* subtle animated shine */
+@keyframes sheen {
+  0% { transform: translateX(-120%) rotate(12deg); opacity:0; }
+  20% { opacity:0.45; }
+  60% { opacity:0.20; }
+  100% { transform: translateX(140%) rotate(12deg); opacity:0; }
+}
+.heroSheen{
+  position:absolute; inset:-40%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  width:55%;
+  filter: blur(2px);
+  z-index:2;
+  pointer-events:none;
+  animation: sheen 7.5s ease-in-out infinite;
+}
+/* make top area breathe on mobile */
+@media (max-width: 720px){
+  .hero{ min-height:70vh; border-radius:22px; }
+  .heroGlass{ padding:16px 16px; border-radius:18px; }
+}
+
 </style></head>
 <body>
 <header class="topbar"><div class="wrap"><div class="nav">
@@ -64,11 +137,14 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
 </div></div></header>
 
 <main id="top" class="wrap">
-<section class="hero"><div class="heroGrid">
+<section class="hero">
+  <div class=\"heroSheen\"></div><div class="heroGrid">
   <div class="card left heroCardBg">
     <div class="kicker">Ανταλλακτικά • Υποστήριξη • Διάγνωση</div>
-    <h1>C.D.G Spare Parts & Services LTD</h1>
+    <div class="heroGlass">
+    <h1>Η λύση στα ανταλλακτικά.</h1>
     <p class="sub" style="font-size:18px;margin-top:-4px"><b>Η λύση στα ανταλλακτικά.</b></p>
+  </div>
     <p class="sub">Η <b>C.D.G Spare Parts & Services LTD</b> προσφέρει ποιοτικά ανταλλακτικά και αξιόπιστη τεχνική υποστήριξη για <b>αυτοκίνητα, λεωφορεία και φορτηγά</b>.
     Παράλληλα, παρέχουμε λύσεις σε <b>ηλεκτρονικά συστήματα και υπολογιστές</b>.</p>
     <div class="actions">
