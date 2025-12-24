@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>C.D.G Spare Parts & Services LTD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="C.D.G Spare Parts & Services LTD – Η λύση στα ανταλλακτικά. Πανκύπρια εξυπηρέτηση.">
 
   <style>
     body {
@@ -13,21 +14,26 @@
       color: #ffffff;
     }
 
+    /* HERO */
     .hero {
       position: relative;
-      min-height: 75vh;
+      min-height: 80vh;
       background: url('assets/cdg-brand.png') center/contain no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(5, 15, 26, 0.6);
+      background: linear-gradient(
+        rgba(5,15,26,0.65),
+        rgba(5,15,26,0.65)
+      );
     }
 
     .hero-content {
@@ -37,25 +43,43 @@
     }
 
     .hero-content h1 {
-      font-size: clamp(28px, 4vw, 48px);
-      margin-bottom: 12px;
+      font-size: clamp(30px, 4vw, 52px);
+      margin-bottom: 14px;
       font-weight: bold;
     }
 
     .hero-content h2 {
-      font-size: clamp(20px, 3vw, 34px);
-      font-weight: 500;
-      letter-spacing: 0.03em;
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 600;
+      letter-spacing: 0.04em;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* SECTIONS */
     .section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
+    .section h3 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #dce6ff;
+    }
+
+    /* FOOTER */
     .footer {
-      padding: 20px;
+      padding: 24px;
       text-align: center;
       font-size: 13px;
       color: #b9c7e6;
@@ -66,6 +90,7 @@
 
 <body>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <h1>C.D.G Spare Parts & Services LTD</h1>
@@ -73,6 +98,7 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section class="section">
     <h3>Ποιοι είμαστε</h3>
     <p>
@@ -82,6 +108,17 @@
     </p>
   </section>
 
+  <!-- SERVICES -->
+  <section class="section">
+    <h3>Τι προσφέρουμε</h3>
+    <p>
+      Ανταλλακτικά αυτοκινήτων, φορτηγών και λεωφορείων,
+      τεχνική καθοδήγηση, έλεγχο συμβατότητας και άμεση εξυπηρέτηση
+      σε όλη την Κύπρο.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
     © C.D.G Spare Parts & Services LTD — Σωστή επιλογή. Άμεση υποστήριξη.
   </footer>
