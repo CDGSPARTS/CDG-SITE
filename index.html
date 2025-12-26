@@ -55,11 +55,59 @@ radial-gradient(520px 320px at 20% 70%, rgba(128,215,255,.14), transparent 60%),
 color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:120px;resize:vertical}
 .footer{margin-top:18px;padding:18px 0 28px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
 @media(max-width:1020px){.heroGrid{grid-template-columns:1fr}.bullets{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.brandGrid{grid-template-columns:repeat(2,1fr)}.reviews{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.menu{display:none}}
+/* ===== FIX: Hero emblem background + premium contrast ===== */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(1200px 650px at 18% 20%, rgba(111,183,255,0.22), transparent 55%),
+    radial-gradient(1000px 600px at 80% 30%, rgba(154,208,255,0.16), transparent 58%),
+    linear-gradient(180deg, rgba(10,20,40,0.70), rgba(10,20,40,0.45)),
+    url("assets/img/cdg-emblem-bg.png") center/cover no-repeat !important;
+}
+
+.hero::before{ content:none !important; }
+.hero::after{ content:none !important; }
+
+.hero h1{
+  text-shadow: 0 18px 60px rgba(0,0,0,0.35);
+}
+.hero h1::after{
+  content:"";
+  display:block;
+  height:6px;
+  width:min(240px,60%);
+  margin:14px 0 0;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(111,183,255,0.00), rgba(111,183,255,0.98), rgba(154,208,255,0.00));
+  box-shadow: 0 10px 30px rgba(111,183,255,0.25);
+}
+.hero .lead{
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+.hero .kpis > div{
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.16);
+}
+
+/* Gearbox specialty highlight */
+.hero .gearbox{
+  margin-top:12px;
+  display:inline-block;
+  padding:10px 12px;
+  border-radius:16px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+}
 </style></head>
 <body>
 <header class="topbar"><div class="wrap"><div class="nav">
 <a class="brand" href="#top"><div class="logo"><img src="assets/cdg-brand.png" alt="CDG"/></div><div><strong>C.D.G Spare Parts & Services LTD</strong><span>Auto • Bus • Truck • Electronics/IT</span></div></a>
-<nav class="menu"><a href="#services">Υπηρεσίες</a><a href="#brands">Brands</a><a href="products.html">Προϊόντα</a><a href="#reviews">Κριτικές</a><a href="#contact">Επικοινωνία</a><a href="en.html">EN</a></nav>
+<nav class="menu"><a href="#services">Υπηρεσίες</a><a href="#brands">Brands</a><a href="products.html">Προϊόντα</a>
+<a href="#contact">Επικοινωνία</a><a href="en.html">EN</a></nav>
 <div class="cta"><a class="btn" href="tel:+35799666438">📞 Κλήση</a><a class="btn" href="https://wa.me/35799666438" target="_blank" rel="noreferrer">💬 WhatsApp</a><a class="btn primary" href="#contact">Ζήτα Προσφορά</a></div>
 </div></div></header>
 
@@ -68,6 +116,7 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   <div class="card left heroCardBg">
     <div class="kicker">Ανταλλακτικά • Υποστήριξη • Διάγνωση</div>
     <h1><span class="heroTitle">C.D.G Spare Parts & Services LTD</span></h1>
+<p class="gearbox">Εξειδίκευση σε <b>Gearbox (κιβώτια ταχυτήτων)</b> για <b>λεωφορεία</b> &amp; <b>φορτηγά</b>.</p>
             <p class="heroSpecialty">Εξειδίκευση σε <b>Gearbox (κιβώτια ταχυτήτων)</b> για <b>λεωφορεία</b> &amp; <b>φορτηγά</b>.</p>
     <p class="sub" style="font-size:18px;margin-top:-4px"><b>Η λύση στα ανταλλακτικά.</b></p>
     <p class="sub">Η <b>C.D.G Spare Parts & Services LTD</b> προσφέρει ποιοτικά ανταλλακτικά και αξιόπιστη τεχνική υποστήριξη για <b>αυτοκίνητα, λεωφορεία και φορτηγά</b>.
@@ -113,23 +162,7 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   </div>
 </section>
 
-<section id="reviews" class="section">
-  <div class="head"><div><h2>Κριτικές Google</h2><p>Κουμπιά για προβολή/κριτική. Όταν έχεις το “g.page/.../review” το βάζω ακριβώς.</p></div>
-  <div class="cta"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=C.D.G+Spare+Parts+%26+Services+LTD+3+Arch.+Makarios+III+Str+2572+Pera+Chorio+Nisou+Nicosia+Cyprus" target="_blank" rel="noreferrer">⭐ Δες κριτικές</a><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=C.D.G+Spare+Parts+%26+Services+LTD+3+Arch.+Makarios+III+Str+2572+Pera+Chorio+Nisou+Nicosia+Cyprus" target="_blank" rel="noreferrer">✍️ Άφησε κριτική</a></div></div>
-  <div class="reviews">
-    <div class="card panel"><b>Τι να γράψεις</b>
-      <ul class="list">
-        <li><span class="check"></span>Εξυπηρέτηση & χρόνο ανταπόκρισης.</li>
-        <li><span class="check"></span>Σωστό ανταλλακτικό από την 1η φορά.</li>
-        <li><span class="check"></span>Βοήθεια με VIN/συμβατότητα.</li>
-      </ul>
-    </div>
-    <div class="card panel"><b>WhatsApp μήνυμα</b>
-      <div style="margin-top:10px;color:var(--muted);font-size:13px;line-height:1.6">“Γεια σας, θέλω προσφορά. Μάρκα/Μοντέλο/Έτος: ____ . VIN: ____ . Χρειάζομαι: ____ .”</div>
-      <div class="cta" style="margin-top:12px"><a class="btn" href="https://wa.me/35799666438?text=Γεια%20σας,%20θέλω%20προσφορά.%20Μάρκα/Μοντέλο/Έτος:%20____%20VIN:%20____%20Χρειάζομαι:%20____" target="_blank" rel="noreferrer">💬 Άνοιξε WhatsApp</a></div>
-    </div>
-  </div>
-</section>
+
 
 <section id="contact" class="section">
   <div class="head"><div><h2>Επικοινωνία</h2><p>Στείλε μάρκα/μοντέλο/έτος + τι χρειάζεσαι (και VIN αν υπάρχει).</p></div></div>
