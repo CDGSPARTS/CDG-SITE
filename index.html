@@ -103,6 +103,55 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   backdrop-filter: blur(10px);
 }
 
+/* === Brands logos grid (with images) === */
+.brandsSection{ padding-top: 28px; }
+.sectionHeader h2{ margin: 0 0 6px; }
+.sectionHeader .muted{ margin: 0 0 18px; opacity: .85; font-size: 13px; }
+
+.brandsGrid{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(140px, 1fr));
+  gap: 14px;
+}
+@media (max-width: 1100px){
+  .brandsGrid{ grid-template-columns: repeat(3, minmax(140px, 1fr)); }
+}
+@media (max-width: 620px){
+  .brandsGrid{ grid-template-columns: repeat(2, minmax(140px, 1fr)); }
+}
+
+.brandTile{
+  position: relative;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+
+.brandLogoWrap{
+  height: 72px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.12);
+  border: 1px solid rgba(255,255,255,0.10);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px;
+}
+
+.brandLogoWrap img{
+  max-width: 100%;
+  max-height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+}
+
+.brandMeta{ margin-top: 10px; display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+.brandName{ font-weight: 800; font-size: 13px; letter-spacing: .02em; }
+.brandNote{ font-size: 11px; opacity: .78; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
 /* Bosch placeholder until official logo */
 .brandLogoWrap.placeholder{ background: rgba(255,255,255,0.06); }
 .brandTextLogo{ font-weight: 900; letter-spacing: .02em; font-size: 22px; }
@@ -124,91 +173,32 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   background: linear-gradient(90deg, rgba(111,183,255,0.85), rgba(154,208,255,0.65));
   color: #fff;
 }
-/* WABCO tile (optional slight tint) */
-.brandTile.wabco{
-  background: rgba(255,255,255,0.08);
-}
 
+/* === Brands: exactly 2 horizontal rows (stable) === */
+.brandsRows{ width:100%; display:flex; flex-direction:column; gap:16px; }
 
-.brandsColumns{
+.brandsRow{
+  width:100%;
   display:grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr);
-  gap: 14px;
-}
-.brandsCol{
-  display:flex;
-  flex-direction:column;
-  gap: 14px;
-}
-.brandsCol.left .brandTile{ 
-  border-color: rgba(154,208,255,0.22);
-}
-@media (max-width: 860px){
-  .brandsColumns{ grid-template-columns: 1fr; }
+  gap:16px;
+  align-items:stretch;
 }
 
+.primaryRow{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.secondaryRow{ grid-template-columns: repeat(5, minmax(0, 1fr)); }
 
-.brandsCol.left .brandTile{
-  transform: scale(1.03);
-  box-shadow: 0 28px 80px rgba(0,0,0,0.28);
-  background: linear-gradient(180deg, rgba(111,183,255,0.18), rgba(255,255,255,0.06));
+@media (max-width: 1100px){
+  .secondaryRow{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 720px){
+  .primaryRow{ grid-template-columns: 1fr; }
+  .secondaryRow{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 420px){
+  .secondaryRow{ grid-template-columns: 1fr; }
 }
 
-.brandsCol.left .brandLogoWrap{
-  height: 88px;
-}
-
-.brandsCol.left .brandName{
-  font-size: 14px;
-}
-
-.brandsCol.left .brandNote{
-  font-size: 12px;
-  opacity: .9;
-}
-
-/* First row emphasis */
-.brandsCol.left{
-  grid-column: 1 / span 2;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.brandsCol.left .brandTile{
-  transform: scale(1.05);
-  background: linear-gradient(180deg, rgba(111,183,255,0.22), rgba(255,255,255,0.08));
-}
-
-.brandsCol.right{
-  grid-column: 1 / span 2;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-@media (max-width: 860px){
-  .brandsColumns,
-  .brandsCol.left,
-  .brandsCol.right{
-    grid-template-columns: 1fr;
-  }
-}
-
-/* === Brands (2 columns horizontal) — fixed layout === */
-.brandsGrid2{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  align-items: stretch;
-}
-
-@media (max-width: 820px){
-  .brandsGrid2{ grid-template-columns: 1fr; }
-}
-
-.brandsGrid2 .brandTile{
+.brandsSection .brandTile{
   position: relative;
   border-radius: 16px;
   background: rgba(255,255,255,0.08);
@@ -216,9 +206,10 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   padding: 14px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  min-width: 0;
 }
 
-.brandsGrid2 .brandLogoWrap{
+.brandsSection .brandLogoWrap{
   height: 72px;
   border-radius: 12px;
   background: rgba(0,0,0,0.12);
@@ -229,39 +220,28 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   padding: 10px;
 }
 
-.brandsGrid2 .brandLogoWrap img{
+.brandsSection .brandLogoWrap img{
   max-width: 100%;
   max-height: 56px;
   object-fit: contain;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
 }
 
-.brandsGrid2 .brandMeta{
-  margin-top: 10px;
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap:10px;
-}
+.brandsSection .brandMeta{ margin-top: 10px; display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+.brandsSection .brandName{ font-weight: 800; font-size: 13px; letter-spacing: .02em; }
+.brandsSection .brandNote{ font-size: 11px; opacity: .78; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.brandsGrid2 .brandName{ font-weight: 800; font-size: 13px; letter-spacing: .02em; }
-.brandsGrid2 .brandNote{ font-size: 11px; opacity: .78; }
-
-/* Primary (ZF, WABCO) */
-.brandsGrid2 .brandTile.primary{
-  transform: translateY(-2px);
+.brandsSection .brandTile.primary{
   background: linear-gradient(180deg, rgba(111,183,255,0.18), rgba(255,255,255,0.06));
   border-color: rgba(154,208,255,0.20);
   box-shadow: 0 28px 80px rgba(0,0,0,0.28);
 }
+.brandsSection .brandTile.primary .brandLogoWrap{ height: 92px; }
+.brandsSection .brandTile.primary .brandLogoWrap img{ max-height: 66px; }
+.brandsSection .brandTile.primary .brandName{ font-size: 14px; }
+.brandsSection .brandTile.primary .brandNote{ font-size: 12px; opacity: .92; }
 
-.brandsGrid2 .brandTile.primary .brandLogoWrap{ height: 88px; }
-.brandsGrid2 .brandTile.primary .brandLogoWrap img{ max-height: 64px; }
-.brandsGrid2 .brandTile.primary .brandName{ font-size: 14px; }
-.brandsGrid2 .brandTile.primary .brandNote{ font-size: 12px; opacity: .9; }
-
-/* ZF highlight badge */
-.brandsGrid2 .brandTile.zf::after{
+.brandsSection .brandTile.zf::after{
   content:"ZF • Gearbox Specialist";
   position:absolute;
   top: 10px;
@@ -324,71 +304,52 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
 <section id="brands" class="section brandsSection">
   <div class="sectionHeader">
     <h2>Brands που υποστηρίζουμε</h2>
-    <p class="muted">Κορυφαίοι κατασκευαστές ανταλλακτικών &amp; συστημάτων — με έμφαση σε ZF &amp; WABCO.</p>
+    <p class="muted">ZF &amp; WABCO στην πρώτη γραμμή. Όλα τα υπόλοιπα στη δεύτερη.</p>
   </div>
 
-  <div class="brandsGrid2">
-<div class="brandTile zf primary zf">
-      <div class="brandLogoWrap">
-        <img src="assets/img/brands/zf.png" alt="ZF">
+  <div class="brandsRows">
+    <div class="brandsRow primaryRow">
+      <div class="brandTile primary zf">
+        <div class="brandLogoWrap"><img src="assets/img/brands/zf.png" alt="ZF"></div>
+        <div class="brandMeta">
+          <div class="brandName">ZF</div>
+          <div class="brandNote">Gearbox Specialist (Bus &amp; Truck)</div>
+        </div>
       </div>
-      <div class="brandMeta">
-        <div class="brandName">ZF</div>
-        <div class="brandNote">Gearbox Specialist (Bus &amp; Truck)</div>
-      </div>
-    </div>
-<div class="brandTile wabco primary">
-      <div class="brandLogoWrap">
-        <img src="assets/img/brands/wabco.png" alt="WABCO">
-      </div>
-      <div class="brandMeta">
-        <div class="brandName">WABCO</div>
-        <div class="brandNote">Supported brand</div>
-      </div>
-    </div>
-<div class="brandTile sachs">
-      <div class="brandLogoWrap">
-        <img src="assets/img/brands/sachs.png" alt="SACHS">
-      </div>
-      <div class="brandMeta">
-        <div class="brandName">SACHS</div>
-        <div class="brandNote">Supported brand</div>
+
+      <div class="brandTile primary wabco">
+        <div class="brandLogoWrap"><img src="assets/img/brands/wabco.png" alt="WABCO"></div>
+        <div class="brandMeta">
+          <div class="brandName">WABCO</div>
+          <div class="brandNote">Systems &amp; support</div>
+        </div>
       </div>
     </div>
-<div class="brandTile trw">
-      <div class="brandLogoWrap">
-        <img src="assets/img/brands/trw.png" alt="TRW">
+
+    <div class="brandsRow secondaryRow">
+      <div class="brandTile">
+        <div class="brandLogoWrap"><img src="assets/img/brands/sachs.png" alt="SACHS"></div>
+        <div class="brandMeta"><div class="brandName">SACHS</div><div class="brandNote">Supported brand</div></div>
       </div>
-      <div class="brandMeta">
-        <div class="brandName">TRW</div>
-        <div class="brandNote">Supported brand</div>
+
+      <div class="brandTile">
+        <div class="brandLogoWrap"><img src="assets/img/brands/trw.png" alt="TRW"></div>
+        <div class="brandMeta"><div class="brandName">TRW</div><div class="brandNote">Supported brand</div></div>
       </div>
-    </div>
-<div class="brandTile mann">
-      <div class="brandLogoWrap">
-        <img src="assets/img/brands/mann.png" alt="MANN FILTER">
+
+      <div class="brandTile">
+        <div class="brandLogoWrap"><img src="assets/img/brands/mann.png" alt="MANN FILTER"></div>
+        <div class="brandMeta"><div class="brandName">MANN FILTER</div><div class="brandNote">Supported brand</div></div>
       </div>
-      <div class="brandMeta">
-        <div class="brandName">MANN FILTER</div>
-        <div class="brandNote">Supported brand</div>
+
+      <div class="brandTile">
+        <div class="brandLogoWrap"><img src="assets/img/brands/valeo.png" alt="Valeo"></div>
+        <div class="brandMeta"><div class="brandName">Valeo</div><div class="brandNote">Supported brand</div></div>
       </div>
-    </div>
-<div class="brandTile valeo">
-      <div class="brandLogoWrap">
-        <img src="assets/img/brands/valeo.png" alt="Valeo">
-      </div>
-      <div class="brandMeta">
-        <div class="brandName">Valeo</div>
-        <div class="brandNote">Supported brand</div>
-      </div>
-    </div>
-<div class="brandTile bosch">
-      <div class="brandLogoWrap">
-        <img src="assets/img/brands/bosch.png" alt="Bosch">
-      </div>
-      <div class="brandMeta">
-        <div class="brandName">Bosch</div>
-        <div class="brandNote">Supported brand</div>
+
+      <div class="brandTile">
+        <div class="brandLogoWrap"><img src="assets/img/brands/bosch.png" alt="Bosch"></div>
+        <div class="brandMeta"><div class="brandName">Bosch</div><div class="brandNote">Supported brand</div></div>
       </div>
     </div>
   </div>
