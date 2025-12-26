@@ -177,6 +177,44 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
 .brandTile.wabco{
   background: rgba(255,255,255,0.08);
 }
+
+/* === Brands: 2 columns vertical priority === */
+.brandsColumns{
+  display:grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr);
+  gap: 14px;
+}
+.brandsCol{
+  display:flex;
+  flex-direction:column;
+  gap: 14px;
+}
+.brandsCol.left .brandTile{ 
+  border-color: rgba(154,208,255,0.22);
+}
+@media (max-width: 860px){
+  .brandsColumns{ grid-template-columns: 1fr; }
+}
+
+/* === Emphasis for primary brands column === */
+.brandsCol.left .brandTile{
+  transform: scale(1.03);
+  box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+  background: linear-gradient(180deg, rgba(111,183,255,0.18), rgba(255,255,255,0.06));
+}
+
+.brandsCol.left .brandLogoWrap{
+  height: 88px;
+}
+
+.brandsCol.left .brandName{
+  font-size: 14px;
+}
+
+.brandsCol.left .brandNote{
+  font-size: 12px;
+  opacity: .9;
+}
 </style></head>
 <body>
 <header class="topbar"><div class="wrap"><div class="nav">
@@ -231,7 +269,203 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
     <p class="muted">Συνεργαζόμαστε με κορυφαίους κατασκευαστές ανταλλακτικών &amp; συστημάτων.</p>
   </div>
 
-  <div class="brandsGrid">
+  
+  <div class="brandsColumns">
+    <div class="brandsCol left">
+<div class="brandTile zf">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/zf.png" alt="ZF">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">ZF</div>
+        <div class="brandNote">Gearbox specialist (Bus &amp; Truck)</div>
+      </div>
+
+<div class="brandTile zf">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/zf.png" alt="ZF">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">ZF</div>
+        <div class="brandNote">Gearbox specialist (Bus &amp; Truck)</div>
+      </div>
+
+<div class="brandTile wabco">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/wabco.png" alt="WABCO">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">WABCO</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
+    <div class="brandsCol right">
+<div class="brandTile zf">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/zf.png" alt="ZF">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">ZF</div>
+        <div class="brandNote">Gearbox specialist (Bus &amp; Truck)</div>
+      </div>
+
+<div class="brandTile wabco">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/wabco.png" alt="WABCO">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">WABCO</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
+
+<div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/valeo.png" alt="Valeo">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">Valeo</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+
+<div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/mann.png" alt="MANN FILTER">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">MANN FILTER</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+
+<div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/trw.png" alt="TRW">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">TRW</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+
+<div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/sachs.png" alt="SACHS">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">SACHS</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+
+<div class="brandTile zf">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/zf.png" alt="ZF">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">ZF</div>
+        <div class="brandNote">Gearbox specialist (Bus &amp; Truck)</div>
+      </div>
+
+<div class="brandTile wabco">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/wabco.png" alt="WABCO">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">WABCO</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
+
+<div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/valeo.png" alt="Valeo">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">Valeo</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+
+<div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/mann.png" alt="MANN FILTER">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">MANN FILTER</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+
+<div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/trw.png" alt="TRW">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">TRW</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+
+<div class="brandTile zf">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/zf.png" alt="ZF">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">ZF</div>
+        <div class="brandNote">Gearbox specialist (Bus &amp; Truck)</div>
+      </div>
+
+<div class="brandTile wabco">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/wabco.png" alt="WABCO">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">WABCO</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
+
+<div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/valeo.png" alt="Valeo">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">Valeo</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+
+<div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/mann.png" alt="MANN FILTER">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">MANN FILTER</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+
+<div class="brandTile zf">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/zf.png" alt="ZF">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">ZF</div>
+        <div class="brandNote">Gearbox specialist (Bus &amp; Truck)</div>
+      </div>
+
+<div class="brandTile wabco">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/wabco.png" alt="WABCO">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">WABCO</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
+
+<div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/valeo.png" alt="Valeo">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">Valeo</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+
 <div class="brandTile zf">
       <div class="brandLogoWrap">
         <img src="assets/img/brands/zf.png" alt="ZF">
@@ -295,7 +529,8 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
         <div class="brandName">Bosch</div>
         <div class="brandNote">Supported brand</div>
       </div>
-</div>
+    </div>
+  </div>
 </section>
 
 
