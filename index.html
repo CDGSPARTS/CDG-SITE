@@ -178,7 +178,7 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   background: rgba(255,255,255,0.08);
 }
 
-/* === Brands: 2 columns vertical priority === */
+
 .brandsColumns{
   display:grid;
   grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr);
@@ -196,7 +196,7 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   .brandsColumns{ grid-template-columns: 1fr; }
 }
 
-/* === Emphasis for primary brands column === */
+
 .brandsCol.left .brandTile{
   transform: scale(1.03);
   box-shadow: 0 28px 80px rgba(0,0,0,0.28);
@@ -214,6 +214,47 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
 .brandsCol.left .brandNote{
   font-size: 12px;
   opacity: .9;
+}
+
+/* === Brands: 2 columns HORIZONTAL === */
+.brandsColumns{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 18px;
+}
+
+.brandsCol{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+/* First row emphasis */
+.brandsCol.left{
+  grid-column: 1 / span 2;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.brandsCol.left .brandTile{
+  transform: scale(1.05);
+  background: linear-gradient(180deg, rgba(111,183,255,0.22), rgba(255,255,255,0.08));
+}
+
+.brandsCol.right{
+  grid-column: 1 / span 2;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 860px){
+  .brandsColumns,
+  .brandsCol.left,
+  .brandsCol.right{
+    grid-template-columns: 1fr;
+  }
 }
 </style></head>
 <body>
