@@ -102,6 +102,77 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   color: rgba(255,255,255,0.92);
   backdrop-filter: blur(10px);
 }
+
+/* === Brands logos grid (with images) === */
+.brandsSection{ padding-top: 28px; }
+.sectionHeader h2{ margin: 0 0 6px; }
+.sectionHeader .muted{ margin: 0 0 18px; opacity: .85; font-size: 13px; }
+
+.brandsGrid{
+  display: grid;
+  grid-template-columns: repeat(6, minmax(140px, 1fr));
+  gap: 14px;
+}
+@media (max-width: 1100px){
+  .brandsGrid{ grid-template-columns: repeat(3, minmax(140px, 1fr)); }
+}
+@media (max-width: 620px){
+  .brandsGrid{ grid-template-columns: repeat(2, minmax(140px, 1fr)); }
+}
+
+.brandTile{
+  position: relative;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+
+.brandLogoWrap{
+  height: 72px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.12);
+  border: 1px solid rgba(255,255,255,0.10);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px;
+}
+
+.brandLogoWrap img{
+  max-width: 100%;
+  max-height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+}
+
+.brandMeta{ margin-top: 10px; display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+.brandName{ font-weight: 800; font-size: 13px; letter-spacing: .02em; }
+.brandNote{ font-size: 11px; opacity: .78; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Bosch placeholder until official logo */
+.brandLogoWrap.placeholder{ background: rgba(255,255,255,0.06); }
+.brandTextLogo{ font-weight: 900; letter-spacing: .02em; font-size: 22px; }
+
+/* ZF highlight */
+.brandTile.zf{
+  background: rgba(111,183,255,0.12);
+  border-color: rgba(154,208,255,0.20);
+}
+.brandTile.zf::after{
+  content:"ZF • Gearbox Specialist";
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(111,183,255,0.85), rgba(154,208,255,0.65));
+  color: #fff;
+}
 </style></head>
 <body>
 <header class="topbar"><div class="wrap"><div class="nav">
@@ -150,15 +221,79 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   </div>
 </section>
 
-<section id="brands" class="section">
-  <div class="head"><div><h2>Brands που υποστηρίζουμε</h2><p>Έβαλα κάρτες “εικόνας” (χωρίς επίσημα λογότυπα). Αν μου στείλεις τα επίσημα logos, τα αντικαθιστώ.</p></div></div>
-  <div class="brandGrid">
-    <div class="brandCard"><img src="assets/brand-zf.svg" alt="ZF"><div class="cap">ZF</div></div>
-    <div class="brandCard"><img src="assets/brand-bosch.svg" alt="Bosch"><div class="cap">Bosch</div></div>
-    <div class="brandCard"><img src="assets/brand-valeo.svg" alt="Valeo"><div class="cap">Valeo</div></div>
-    <div class="brandCard"><img src="assets/brand-mann-filter.svg" alt="MANN FILTER"><div class="cap">MANN FILTER</div></div>
-    <div class="brandCard"><img src="assets/brand-trw.svg" alt="TRW"><div class="cap">TRW</div></div>
-    <div class="brandCard"><img src="assets/brand-sachs.svg" alt="SACHS"><div class="cap">SACHS</div></div>
+<section id="brands" class="section brandsSection">
+  <div class="sectionHeader">
+    <h2>Brands που υποστηρίζουμε</h2>
+    <p class="muted">Συνεργαζόμαστε με κορυφαίους κατασκευαστές ανταλλακτικών &amp; συστημάτων.</p>
+  </div>
+
+  <div class="brandsGrid">
+    <div class="brandTile zf">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/zf.png" alt="ZF">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">ZF</div>
+        <div class="brandNote">Gearbox specialist (Bus &amp; Truck)</div>
+      </div>
+    </div>
+
+    
+    <div class="brandTile bosch">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/bosch.png" alt="Bosch">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">Bosch</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
+    
+      <div class="brandMeta">
+        <div class="brandName">Bosch</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
+
+    <div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/valeo.png" alt="Valeo">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">Valeo</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
+
+    <div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/mann.png" alt="MANN FILTER">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">MANN FILTER</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
+
+    <div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/trw.png" alt="TRW">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">TRW</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
+
+    <div class="brandTile">
+      <div class="brandLogoWrap">
+        <img src="assets/img/brands/sachs.png" alt="SACHS">
+      </div>
+      <div class="brandMeta">
+        <div class="brandName">SACHS</div>
+        <div class="brandNote">Supported brand</div>
+      </div>
+    </div>
   </div>
 </section>
 
