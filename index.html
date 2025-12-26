@@ -276,6 +276,21 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   font-size: 13px;
   font-weight: 600;
 }
+
+/* === Hover glow ONLY for ZF & WABCO (primary brands) === */
+.primaryRow .brandTile.primary{
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.primaryRow .brandTile.primary:hover{
+  transform: translateY(-6px) scale(1.14);
+  border-color: rgba(154,208,255,0.35);
+  box-shadow:
+    0 0 0 1px rgba(120,190,255,0.35),
+    0 35px 95px rgba(80,160,255,0.35);
+}
+.primaryRow .brandTile.primary:hover .brandLogoWrap{
+  border-color: rgba(154,208,255,0.28);
+}
 </style></head>
 <body>
 <header class="topbar"><div class="wrap"><div class="nav">
