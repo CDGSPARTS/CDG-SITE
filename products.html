@@ -1,0 +1,43 @@
+<!doctype html><html lang="el"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Προϊόντα | C.D.G</title>
+<style>
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#061423 0%,#050f1a 100%);color:#eaf2ff}
+.wrap{max-width:1180px;margin:0 auto;padding:18px} a{color:inherit}
+.card{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);border-radius:18px;padding:16px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(3,1fr);margin-top:12px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<div id="gearbox"></div>
+<div class="wrap">
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center">
+  <div style="display:flex;gap:10px;align-items:center">
+    <img src="assets/cdg-brand.png" alt="CDG" style="width:44px;height:44px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);object-fit:cover">
+    <div><b>C.D.G Spare Parts & Services LTD</b><div style="opacity:.75;font-size:13px">3, Arch. Makarios III Str, 2572 Pera Chorio Nisou, Nicosia, Cyprus</div></div>
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+    <a href="index.html">← Αρχική</a>
+    <a href="https://wa.me/35799666438" target="_blank" rel="noreferrer">WhatsApp</a>
+  </div>
+</div>
+
+<div class="card" style="margin-top:12px">
+  <h1 style="margin:0 0 6px">Προϊόντα & Κατηγορίες</h1>
+  <div style="opacity:.78;line-height:1.6">Στείλε μας <b>μάρκα/μοντέλο/έτος</b> και (αν υπάρχει) <b>VIN</b>. Υποστήριξη brands όπως <b>ZF</b>.</div>
+</div>
+
+<div class="grid">
+<div class="card">
+        <h3>⚙️ Gearbox</h3>
+        <p>Επιδιορθώσεις &amp; Πωλήσεις Gearbox (ZF / Bus &amp; Truck)</p>
+      </div>
+<div class="card"><b>🛑 Φρένα</b><div style="opacity:.78;margin-top:6px">Δίσκοι/τακάκια/υγρά/εξαρτήματα.</div></div>
+  <div class="card"><b>🧼 Φίλτρα</b><div style="opacity:.78;margin-top:6px">Αέρα/λαδιού/καμπίνας.</div></div>
+  <div class="card"><b>🛞 Ανάρτηση</b><div style="opacity:.78;margin-top:6px">Αμορτισέρ/ψαλίδια/σινεμπλόκ.</div></div>
+  <div class="card"><b>🧩 Βαλβίδες</b><div style="opacity:.78;margin-top:6px">Φορτηγά • Καρότσες • Λεωφορεία</div><div style="opacity:.78;margin-top:6px">EBS • ABS • ECAS</div></div>
+  <div class="card"><b>🛢️ Λιπαντικά</b><div style="opacity:.78;margin-top:6px">Λάδια/αντιψυκτικά/υγρά κιβωτίου.</div></div>
+  <div class="card"><b>🧰 Αναλώσιμα</b><div style="opacity:.78;margin-top:6px">Καθαριστικά/σπρέι/σφραγιστικά.</div></div>
+</div>
+
+<div class="card" style="margin-top:12px;opacity:.8;font-size:12px">© <span id="y"></span> C.D.G Spare Parts & Services LTD</div>
+</div><script>document.getElementById("y").textContent=new Date().getFullYear()</script></body></html>

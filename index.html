@@ -131,19 +131,19 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
 }
 
 .brandLogoWrap{
-  height: 92px;
+  height: 72px;
   border-radius: 12px;
   background: rgba(0,0,0,0.12);
   border: 1px solid rgba(255,255,255,0.10);
   display:flex;
   align-items:center;
   justify-content:center;
-  padding: 6px;
+  padding: 10px;
 }
 
 .brandLogoWrap img{
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 56px;
   object-fit: contain;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
 }
@@ -261,14 +261,11 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
 }
 
 .primaryRow .brandLogoWrap{
-  height: 160px;
-  padding: 8px;
+  height: 120px;
 }
 
 .primaryRow .brandLogoWrap img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  max-height: 88px;
 }
 
 .primaryRow .brandName{
@@ -294,6 +291,11 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
 .primaryRow .brandTile.primary:hover .brandLogoWrap{
   border-color: rgba(154,208,255,0.28);
 }
+
+/* clickable brand tiles (ZF/WABCO) */
+.brandLink{display:block;color:inherit;text-decoration:none;}
+.brandLink:focus{outline:2px solid rgba(255,255,255,.35);outline-offset:6px;border-radius:14px;}
+
 </style></head>
 <body>
 <header class="topbar"><div class="wrap"><div class="nav">
@@ -350,20 +352,26 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
   <div class="brandsRows">
     <div class="brandsRow primaryRow">
       <div class="brandTile primary zf">
+<a class="brandLink" href="products.html#gearbox">
         <div class="brandLogoWrap"><img src="assets/img/brands/zf.png" alt="ZF"></div>
         <div class="brandMeta">
           <div class="brandName">ZF</div>
           <div class="brandNote">Gearbox Specialist (Bus &amp; Truck)</div>
         </div>
-      </div>
+      
+</a>
+</div>
 
       <div class="brandTile primary wabco">
+<a class="brandLink" href="products.html#gearbox">
         <div class="brandLogoWrap"><img src="assets/img/brands/wabco.png" alt="WABCO"></div>
         <div class="brandMeta">
           <div class="brandName">WABCO</div>
           <div class="brandNote">Systems &amp; support</div>
         </div>
-      </div>
+      
+</a>
+</div>
     </div>
 
     <div class="brandsRow secondaryRow">
@@ -379,7 +387,7 @@ color:var(--txt);padding:12px;font-size:14px;outline:none} textarea{min-height:1
 
       <div class="brandTile">
         <div class="brandLogoWrap"><img src="assets/img/brands/knorr-bremse.png" alt="KNORR-BREMSE"></div>
-        <div class="brandMeta"><div class="brandName">KNORR-BREMSE</div><div class="brandNote">Supported brand</div></div>
+        <div class="brandMeta"><div class="brandName">MANN FILTER</div><div class="brandNote">Supported brand</div></div>
       </div>
 
       <div class="brandTile">
