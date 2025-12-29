@@ -1,0 +1,31 @@
+
+/* ===== BRAND LOGOS SIZE FIX ===== */
+
+/* All brand logos */
+.brands-grid img,
+.brand img,
+.brand-logo,
+.brand-item img {
+  max-width: 180px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* ZF & WABCO emphasized (+20%) */
+.brands-grid img[alt="ZF"],
+.brands-grid img[alt="WABCO"],
+.brand img[alt="ZF"],
+.brand img[alt="WABCO"] {
+  max-width: 220px;
+  max-height: 150px;
+}
+
+/* Hover glow only for ZF & WABCO */
+.brands-grid img[alt="ZF"]:hover,
+.brands-grid img[alt="WABCO"]:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 14px rgba(90,160,255,0.7));
+}
